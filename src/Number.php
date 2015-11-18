@@ -12,6 +12,9 @@ class Number
     /** @var  int */
     private $value;
 
+    /** @var  string */
+    private $string;
+
     /**
      * Number constructor.
      * @param Digit[] $digits
@@ -20,6 +23,7 @@ class Number
     {
         $this->digits = $digits;
         $this->value = $this->calculateValue();
+        $this->string = $this->calculateString();
     }
 
     /**
@@ -38,11 +42,29 @@ class Number
         return $this->value;
     }
 
+    /**
+     * @return string
+     */
+    public function asString()
+    {
+        return $this->string;
+    }
+
     private function calculateValue()
     {
         $result = 0;
         foreach ($this->digits as $digit) {
             $result = $result * 10 + $digit->value();
+        }
+
+        return $result;
+    }
+
+    private function calculateString()
+    {
+        $result = '';
+        foreach ($this->digits as $digit) {
+            $result .= $digit->value();
         }
 
         return $result;

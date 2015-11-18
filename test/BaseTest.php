@@ -3,6 +3,11 @@
 namespace KataBank\Test;
 
 use KataBank\Digit;
+use KataBank\DigitBuilder;
+use KataBank\NumberBuilder;
+use KataBank\NumberValidator;
+use KataBank\Ocr;
+use KataBank\TextDigits;
 
 abstract class BaseTest extends \PHPUnit_Framework_TestCase
 {
@@ -139,5 +144,19 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
             "| |" .
             "|_|" .
             "   ";
+    }
+
+    /**
+     * @return Ocr
+     */
+    protected function realOcr()
+    {
+        $textDigits = new TextDigits();
+        $digitBuilder = new DigitBuilder($textDigits);
+        $numberBuilder = new NumberBuilder($digitBuilder);
+        $validator = new NumberValidator();
+        $ocr = new Ocr($numberBuilder, $validator);
+
+        return $ocr;
     }
 }

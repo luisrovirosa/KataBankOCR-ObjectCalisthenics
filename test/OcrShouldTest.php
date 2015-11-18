@@ -2,11 +2,9 @@
 
 namespace KataBank\Test;
 
-use KataBank\DigitBuilder;
 use KataBank\NumberBuilder;
 use KataBank\NumberValidator;
 use KataBank\Ocr;
-use KataBank\TextDigits;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 
@@ -58,20 +56,6 @@ class OcrShouldTest extends BaseTest
         $ocr->read($this->validInput());
 
         $this->numberValidatorProphecy->validate($this->builtNumber)->shouldHaveBeenCalled();
-    }
-
-    /**
-     * @return Ocr
-     */
-    private function realOcr()
-    {
-        $textDigits = new TextDigits();
-        $digitBuilder = new DigitBuilder($textDigits);
-        $numberBuilder = new NumberBuilder($digitBuilder);
-        $validator = new NumberValidator();
-        $ocr = new Ocr($numberBuilder, $validator);
-
-        return $ocr;
     }
 
     /**

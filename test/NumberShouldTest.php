@@ -10,6 +10,24 @@ class NumberShouldTest extends BaseTest
     /** @test */
     public function return_the_value_of_his_numbers()
     {
+        $number = $this->number();
+
+        $this->assertEquals(345882865, $number->value());
+    }
+
+    /** @test */
+    public function return_the_value_of_his_numbers_as_string()
+    {
+        $number = $this->number();
+
+        $this->assertEquals("345882865", $number->asString());
+    }
+
+    /**
+     * @return \KataBank\Number
+     */
+    private function number()
+    {
         $digits = [
             new Digit(3),
             new Digit(4),
@@ -23,6 +41,6 @@ class NumberShouldTest extends BaseTest
         ];
         $number = new Number($digits);
 
-        $this->assertEquals(345882865, $number->value());
+        return $number;
     }
 }
