@@ -27,51 +27,19 @@ class Digit
 
     private function numbers()
     {
-        $numbers = [
-            " _ " .
-            "| |" .
-            "|_|" .
-            "   ",
-            "   " .
-            "  |" .
-            "  |" .
-            "   ",
-            " _ " .
-            " _|" .
-            "|_ " .
-            "   ",
-            " _ " .
-            " _|" .
-            " _|" .
-            "   ",
-            "   " .
-            "|_|" .
-            "  |" .
-            "   ",
-            " _ " .
-            "|_ " .
-            " _|" .
-            "   ",
-            " _ " .
-            "|_ " .
-            "|_|" .
-            "   ",
-            " _ " .
-            "  |" .
-            "  |" .
-            "   ",
-            " _ " .
-            "|_|" .
-            "|_|" .
-            "   ",
-            " _ " .
-            "|_|" .
-            " _|" .
-            "   "
 
+        return [
+            $this->zero(),
+            $this->one(),
+            $this->two(),
+            $this->three(),
+            $this->four(),
+            $this->five(),
+            $this->six(),
+            $this->seven(),
+            $this->eight(),
+            $this->nine()
         ];
-
-        return $numbers;
     }
 
     /**
@@ -86,5 +54,125 @@ class Digit
                 return $this->value == $number;
             }
         );
+    }
+
+    /**
+     * @return string
+     */
+    private function zero()
+    {
+        return
+            " _ " .
+            "| |" .
+            "|_|" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function one()
+    {
+        return
+            "   " .
+            "  |" .
+            "  |" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function two()
+    {
+        return
+            " _ " .
+            " _|" .
+            "|_ " .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function three()
+    {
+        return
+            " _ " .
+            " _|" .
+            " _|" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function four()
+    {
+        return
+            "   " .
+            "|_|" .
+            "  |" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function five()
+    {
+        return
+            " _ " .
+            "|_ " .
+            " _|" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function six()
+    {
+        return
+            " _ " .
+            "|_ " .
+            "|_|" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function seven()
+    {
+        return
+            " _ " .
+            "  |" .
+            "  |" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function eight()
+    {
+        return
+            " _ " .
+            "|_|" .
+            "|_|" .
+            "   ";
+    }
+
+    /**
+     * @return string
+     */
+    private function nine()
+    {
+        return
+            " _ " .
+            "|_|" .
+            " _|" .
+            "   ";
     }
 }
