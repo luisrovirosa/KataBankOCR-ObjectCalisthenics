@@ -29,7 +29,15 @@ class NameBuilderShouldTest extends BaseTest
     {
         $numbers = $this->numbers();
 
-        $this->assertEquals($this->one(), array_pop($numbers));
+        $this->assertEquals($this->one(), $numbers[0]);
+    }
+
+    /** @test */
+    public function return_the_second_number_as_two()
+    {
+        $numbers = $this->numbers();
+
+        $this->assertEquals($this->two(), $numbers[1]);
     }
 
     /**

@@ -26,6 +26,24 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function one()
     {
-        return new Number("     |  |   ");
+        return new Number(
+            "   " .
+            "  |" .
+            "  |" .
+            "   "
+        );
+    }
+
+    /**
+     * @return Number
+     */
+    protected function two()
+    {
+        return new Number(
+            " _ " .
+            " _|" .
+            "|_ " .
+            "   "
+        );
     }
 }

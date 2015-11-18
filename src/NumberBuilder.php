@@ -20,7 +20,8 @@ class NumberBuilder
     }
 
     /**
-     * @param $lines
+     * @param $fromPaper
+     * @param $position
      * @return string
      */
     private function numberText($fromPaper, $position)
@@ -28,7 +29,7 @@ class NumberBuilder
         $number = '';
         $lines = explode("\n", $fromPaper);
         foreach ($lines as $line) {
-            $number .= substr($line, 0, 3);
+            $number .= substr($line, $position * 3, 3);
         }
 
         return $number;
