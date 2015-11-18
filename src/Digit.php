@@ -4,6 +4,7 @@ namespace KataBank;
 
 class Digit
 {
+    /** @var string */
     private $value;
 
     /**
@@ -17,6 +18,41 @@ class Digit
 
     public function value()
     {
-        return 1;
+        $matched = $this->matchedNumbers($this->numbers());
+
+        $indexes = array_keys($matched);
+
+        return array_shift($indexes) + 1;
+    }
+
+    private function numbers()
+    {
+        $numbers = [
+            "   " .
+            "  |" .
+            "  |" .
+            "   ",
+            " _ " .
+            " _|" .
+            "|_ " .
+            "   ",
+
+        ];
+
+        return $numbers;
+    }
+
+    /**
+     * @param $numbers
+     * @return array
+     */
+    private function matchedNumbers($numbers)
+    {
+        return array_filter(
+            $numbers,
+            function ($number) {
+                return $this->value == $number;
+            }
+        );
     }
 }

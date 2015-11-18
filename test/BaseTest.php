@@ -22,7 +22,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return Number
+     * @return Digit
      */
     protected function one()
     {
@@ -35,7 +35,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return Number
+     * @return Digit
      */
     protected function two()
     {
