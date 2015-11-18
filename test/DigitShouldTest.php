@@ -40,4 +40,10 @@ class DigitShouldTest extends BaseTest
     {
         $this->assertEquals(6, $this->six()->value());
     }
+
+    /** @test */
+    public function return_value_7()
+    {
+        $this->assertEquals(7, $this->seven()->value());
+    }
 }
