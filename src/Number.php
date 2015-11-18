@@ -9,6 +9,9 @@ class Number
      */
     private $digits;
 
+    /** @var  int */
+    private $value;
+
     /**
      * Number constructor.
      * @param Digit[] $digits
@@ -16,6 +19,7 @@ class Number
     public function __construct($digits)
     {
         $this->digits = $digits;
+        $this->value = $this->calculateValue();
     }
 
     /**
@@ -30,6 +34,11 @@ class Number
      * @return int
      */
     public function value()
+    {
+        return $this->value;
+    }
+
+    private function calculateValue()
     {
         $result = 0;
         foreach ($this->digits as $digit) {

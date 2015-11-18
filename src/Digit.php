@@ -4,7 +4,7 @@ namespace KataBank;
 
 class Digit
 {
-    /** @var string */
+    /** @var int */
     private $value;
 
     /**
@@ -16,6 +16,9 @@ class Digit
         $this->value = $intValue;
     }
 
+    /**
+     * @return int
+     */
     public function value()
     {
         return $this->value;

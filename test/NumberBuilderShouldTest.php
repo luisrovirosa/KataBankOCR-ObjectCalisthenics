@@ -21,6 +21,7 @@ class NumberBuilderShouldTest extends BaseTest
     public function use_digit_builder()
     {
         $digitBuilderProphecy = $this->prophesize('KataBank\DigitBuilder');
+        $digitBuilderProphecy->build($this->one())->willReturn(new Digit(1));
         /** @var DigitBuilder $digitBuilder */
         $digitBuilder = $digitBuilderProphecy->reveal();
         $numberBuilder = new NumberBuilder($digitBuilder);

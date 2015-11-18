@@ -28,6 +28,21 @@ class DigitBuilder
         return new Digit(array_shift($indexes));
     }
 
+    /**
+     * @param $fromString
+     * @param $numbers
+     * @return array
+     */
+    private function matchedNumbers($fromString, $numbers)
+    {
+        return array_filter(
+            $numbers,
+            function ($number) use ($fromString) {
+                return $fromString == $number;
+            }
+        );
+    }
+
     private function numbers()
     {
 
@@ -43,20 +58,5 @@ class DigitBuilder
             $this->textDigits->eight(),
             $this->textDigits->nine()
         ];
-    }
-
-    /**
-     * @param $fromString
-     * @param $numbers
-     * @return array
-     */
-    private function matchedNumbers($fromString, $numbers)
-    {
-        return array_filter(
-            $numbers,
-            function ($number) use ($fromString) {
-                return $fromString == $number;
-            }
-        );
     }
 }

@@ -25,13 +25,23 @@ class NumberBuilder
     public function build($fromPaper)
     {
         $digits = [];
-        $numberOfDigits = (int) ((strlen($fromPaper) - 1) /
-            self::CHARACTER_PER_NUMBER / self::LINES_PER_NUMBER);
-        for ($i = 0; $i < $numberOfDigits; $i++) {
+        for ($i = 0; $i < $this->numberOfDigits($fromPaper); $i++) {
             $digits[] = $this->digit($fromPaper, $i);
         }
 
         return new Number($digits);
+    }
+
+    /**
+     * @param $fromPaper
+     * @param $i
+     * @return Number
+     */
+    private function digit($fromPaper, $i)
+    {
+        $text = $this->digitText($fromPaper, $i);
+
+        return $this->digitBuilder->build($text);
     }
 
     /**
@@ -55,13 +65,13 @@ class NumberBuilder
 
     /**
      * @param $fromPaper
-     * @param $i
-     * @return Number
+     * @return int
      */
-    private function digit($fromPaper, $i)
+    private function numberOfDigits($fromPaper)
     {
-        $text = $this->digitText($fromPaper, $i);
+        $numberOfDigits = (int) ((strlen($fromPaper) - 1) /
+            self::CHARACTER_PER_NUMBER / self::LINES_PER_NUMBER);
 
-        return $this->digitBuilder->build($text);
+        return $numberOfDigits;
     }
 }
