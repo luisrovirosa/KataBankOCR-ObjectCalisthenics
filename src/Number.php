@@ -62,12 +62,12 @@ class Number
 
     private function calculateString()
     {
-        $result = '';
-        foreach ($this->digits as $digit) {
-            $result .= $digit->value();
-        }
-
-        return $result;
+        return array_reduce(
+            $this->digits,
+            function ($carry, Digit $digit) {
+                return $carry . $digit->value();
+            }
+        );
     }
 
 }
