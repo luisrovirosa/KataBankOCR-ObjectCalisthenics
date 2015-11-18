@@ -2,6 +2,7 @@
 
 namespace KataBank\Test;
 
+use KataBank\Digit;
 use KataBank\NumberBuilder;
 
 class NumberBuilderShouldTest extends BaseTest
@@ -28,7 +29,7 @@ class NumberBuilderShouldTest extends BaseTest
         $number = $this->number();
 
         $digits = $number->digits();
-        $this->assertEquals($this->one(), $digits[0]);
+        $this->assertEquals(new Digit(1), $digits[0]);
     }
 
     /** @test */
@@ -37,7 +38,7 @@ class NumberBuilderShouldTest extends BaseTest
         $number = $this->number();
         $digits = $number->digits();
 
-        $this->assertEquals($this->two(), $digits[1]);
+        $this->assertEquals(new Digit(2), $digits[1]);
     }
 
     /**

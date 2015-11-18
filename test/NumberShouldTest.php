@@ -2,6 +2,7 @@
 
 namespace KataBank\Test;
 
+use KataBank\Digit;
 use KataBank\Number;
 
 class NumberShouldTest extends BaseTest
@@ -10,8 +11,8 @@ class NumberShouldTest extends BaseTest
     public function return_the_value_of_his_numbers()
     {
         $digits = [
-            $this->one(),
-            $this->two(),
+            new Digit(1),
+            new Digit(2),
         ];
         $number = new Number($digits);
 
