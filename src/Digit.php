@@ -29,16 +29,16 @@ class Digit
     {
 
         return [
-            $this->zero(),
-            $this->one(),
-            $this->two(),
-            $this->three(),
-            $this->four(),
-            $this->five(),
-            $this->six(),
-            $this->seven(),
-            $this->eight(),
-            $this->nine()
+            TextDigits::zero(),
+            TextDigits::one(),
+            TextDigits::two(),
+            TextDigits::three(),
+            TextDigits::four(),
+            TextDigits::five(),
+            TextDigits::six(),
+            TextDigits::seven(),
+            TextDigits::eight(),
+            TextDigits::nine()
         ];
     }
 
@@ -56,123 +56,4 @@ class Digit
         );
     }
 
-    /**
-     * @return string
-     */
-    private function zero()
-    {
-        return
-            " _ " .
-            "| |" .
-            "|_|" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function one()
-    {
-        return
-            "   " .
-            "  |" .
-            "  |" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function two()
-    {
-        return
-            " _ " .
-            " _|" .
-            "|_ " .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function three()
-    {
-        return
-            " _ " .
-            " _|" .
-            " _|" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function four()
-    {
-        return
-            "   " .
-            "|_|" .
-            "  |" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function five()
-    {
-        return
-            " _ " .
-            "|_ " .
-            " _|" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function six()
-    {
-        return
-            " _ " .
-            "|_ " .
-            "|_|" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function seven()
-    {
-        return
-            " _ " .
-            "  |" .
-            "  |" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function eight()
-    {
-        return
-            " _ " .
-            "|_|" .
-            "|_|" .
-            "   ";
-    }
-
-    /**
-     * @return string
-     */
-    private function nine()
-    {
-        return
-            " _ " .
-            "|_|" .
-            " _|" .
-            "   ";
-    }
 }
