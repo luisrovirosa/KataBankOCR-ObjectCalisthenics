@@ -52,4 +52,10 @@ class DigitShouldTest extends BaseTest
     {
         $this->assertEquals(8, $this->eight()->value());
     }
+
+    /** @test */
+    public function return_value_9()
+    {
+        $this->assertEquals(9, $this->nine()->value());
+    }
 }

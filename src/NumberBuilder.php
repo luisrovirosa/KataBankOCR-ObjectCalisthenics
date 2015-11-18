@@ -15,7 +15,6 @@ class NumberBuilder
             $digits[] = $this->digit($fromPaper, $i);
         }
 
-
         return new Number($digits);
     }
 

@@ -20,10 +20,10 @@ class Ocr
 
     /**
      * @param $fromPaper
-     * @return array
+     * @return \KataBank\Number
      */
     public function read($fromPaper)
     {
-        $numbers = $this->builder->build($fromPaper);
+        return $this->builder->build($fromPaper);
     }
 }

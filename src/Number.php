@@ -18,11 +18,17 @@ class Number
         $this->digits = $digits;
     }
 
+    /**
+     * @return Digit[]
+     */
     public function digits()
     {
         return $this->digits;
     }
 
+    /**
+     * @return int
+     */
     public function value()
     {
         $result = 0;

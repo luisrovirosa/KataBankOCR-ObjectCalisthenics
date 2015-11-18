@@ -14,9 +14,9 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     {
         $fromPaper =
             "    _  _     _  _  _  _  _ \n" .
-            "  | _| _||_||_ |_ | ||_||_|\n" .
+            "  | _| _||_||_ |_   ||_||_|\n" .
             "  ||_  _|  | _||_|  ||_| _|\n" .
-            "                          ";
+            "                           ";
 
         return $fromPaper;
     }
@@ -121,6 +121,19 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
             " _ " .
             "|_|" .
             "|_|" .
+            "   "
+        );
+    }
+
+    /**
+     * @return Digit
+     */
+    protected function nine()
+    {
+        return new Digit(
+            " _ " .
+            "|_|" .
+            " _|" .
             "   "
         );
     }
