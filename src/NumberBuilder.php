@@ -42,7 +42,7 @@ class NumberBuilder
     private function digit($fromPaper, $i)
     {
         $text = $this->digitText($fromPaper, $i);
-        $digit = new Digit($text);
+        $digit = Digit::fromString($text);
 
         return $digit;
     }

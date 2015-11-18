@@ -26,7 +26,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function one()
     {
-        return new Digit(
+        return Digit::fromString(
             "   " .
             "  |" .
             "  |" .
@@ -39,7 +39,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function two()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             " _|" .
             "|_ " .
@@ -52,7 +52,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function three()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             " _|" .
             " _|" .
@@ -65,7 +65,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function four()
     {
-        return new Digit(
+        return Digit::fromString(
             "   " .
             "|_|" .
             "  |" .
@@ -78,7 +78,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function five()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             "|_ " .
             " _|" .
@@ -91,7 +91,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function six()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             "|_ " .
             "|_|" .
@@ -104,7 +104,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function seven()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             "  |" .
             "  |" .
@@ -117,7 +117,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function eight()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             "|_|" .
             "|_|" .
@@ -130,7 +130,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function nine()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             "|_|" .
             " _|" .
@@ -143,7 +143,7 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function zero()
     {
-        return new Digit(
+        return Digit::fromString(
             " _ " .
             "| |" .
             "|_|" .

@@ -9,23 +9,28 @@ class Digit
 
     /**
      * Number constructor.
-     * @param $fromString
+     * @param $intValue
      */
-    public function __construct($fromString)
+    public function __construct($intValue)
     {
-        $this->value = $fromString;
+        $this->value = $intValue;
+    }
+
+    public static function fromString($fromString)
+    {
+        $matched = static::matchedNumbers($fromString, static::numbers());
+
+        $indexes = array_keys($matched);
+
+        return new Digit(array_shift($indexes));
     }
 
     public function value()
     {
-        $matched = $this->matchedNumbers($this->numbers());
-
-        $indexes = array_keys($matched);
-
-        return array_shift($indexes);
+        return $this->value;
     }
 
-    private function numbers()
+    private static function numbers()
     {
 
         return [
@@ -46,12 +51,12 @@ class Digit
      * @param $numbers
      * @return array
      */
-    private function matchedNumbers($numbers)
+    private static function matchedNumbers($fromString, $numbers)
     {
         return array_filter(
             $numbers,
-            function ($number) {
-                return $this->value == $number;
+            function ($number) use ($fromString) {
+                return $fromString == $number;
             }
         );
     }
