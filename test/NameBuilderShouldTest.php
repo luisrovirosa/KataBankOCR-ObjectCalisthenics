@@ -14,6 +14,15 @@ class NameBuilderShouldTest extends BaseTest
         $this->assertCount(9, $numbers);
     }
 
+    /** @test */
+    public function return_numbers()
+    {
+        $numbers = $this->numbers();
+
+        foreach ($numbers as $number) {
+            $this->assertInstanceOf('KataBank\Number', $number);
+        }
+    }
     /**
      * @return array
      */

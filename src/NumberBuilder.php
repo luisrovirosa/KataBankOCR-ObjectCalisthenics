@@ -12,7 +12,7 @@ class NumberBuilder
     {
         $result = [];
         for ($i = 0; $i < 9; $i++) {
-            $result[] = null;
+            $result[] = new Number();
         }
 
         return $result;
