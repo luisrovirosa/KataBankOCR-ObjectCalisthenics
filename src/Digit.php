@@ -22,12 +22,16 @@ class Digit
 
         $indexes = array_keys($matched);
 
-        return array_shift($indexes) + 1;
+        return array_shift($indexes);
     }
 
     private function numbers()
     {
         $numbers = [
+            " _ " .
+            "| |" .
+            "|_|" .
+            "   ",
             "   " .
             "  |" .
             "  |" .
