@@ -22,16 +22,15 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @return Digit
+     * @return string
      */
     protected function one()
     {
-        return Digit::fromString(
+        return
             "   " .
             "  |" .
             "  |" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -39,12 +38,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function two()
     {
-        return Digit::fromString(
+        return
             " _ " .
             " _|" .
             "|_ " .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -52,12 +50,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function three()
     {
-        return Digit::fromString(
+        return
             " _ " .
             " _|" .
             " _|" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -65,12 +62,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function four()
     {
-        return Digit::fromString(
+        return
             "   " .
             "|_|" .
             "  |" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -78,12 +74,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function five()
     {
-        return Digit::fromString(
+        return
             " _ " .
             "|_ " .
             " _|" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -91,12 +86,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function six()
     {
-        return Digit::fromString(
+        return
             " _ " .
             "|_ " .
             "|_|" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -104,12 +98,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function seven()
     {
-        return Digit::fromString(
+        return
             " _ " .
             "  |" .
             "  |" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -117,12 +110,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function eight()
     {
-        return Digit::fromString(
+        return
             " _ " .
             "|_|" .
             "|_|" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -130,12 +122,11 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function nine()
     {
-        return Digit::fromString(
+        return
             " _ " .
             "|_|" .
             " _|" .
-            "   "
-        );
+            "   ";
     }
 
     /**
@@ -143,11 +134,10 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
      */
     protected function zero()
     {
-        return Digit::fromString(
+        return
             " _ " .
             "| |" .
             "|_|" .
-            "   "
-        );
+            "   ";
     }
 }
