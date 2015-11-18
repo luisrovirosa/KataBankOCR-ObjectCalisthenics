@@ -80,8 +80,21 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     {
         return new Digit(
             " _ " .
-            "|_" .
+            "|_ " .
             " _|" .
+            "   "
+        );
+    }
+
+    /**
+     * @return Digit
+     */
+    protected function six()
+    {
+        return new Digit(
+            " _ " .
+            "|_ " .
+            "|_|" .
             "   "
         );
     }
