@@ -13,12 +13,7 @@ class OcrShouldTest extends BaseTest
         $this->markTestIncomplete('Not yet');
         $ocr = new Ocr(new NumberBuilder());
 
-        $number = $ocr->read(
-            "   _  _     _  _  _  _  _ " .
-            " | _| _||_||_ |_ | ||_||_|" .
-            " ||_  _|  | _||_|  ||_| _|" .
-            "                          "
-        );
+        $number = $ocr->read($this->validInput());
 
         $this->assertEquals(123456789, $number);
     }
@@ -32,13 +27,22 @@ class OcrShouldTest extends BaseTest
         $builder = $numberBuilderProphecy->reveal();
         $ocr = new Ocr($builder);
 
-        $fromPaper = "   _  _     _  _  _  _  _ " .
+        $ocr->read($this->validInput());
+
+        $numberBuilderProphecy->build($this->validInput())->shouldHaveBeenCalled();
+    }
+
+    /**
+     * @return string
+     */
+    private function validInput()
+    {
+        $fromPaper =
+            "   _  _     _  _  _  _  _ " .
             " | _| _||_||_ |_ | ||_||_|" .
             " ||_  _|  | _||_|  ||_| _|" .
             "                          ";
 
-        $ocr->read($fromPaper);
-
-        $numberBuilderProphecy->build($fromPaper)->shouldHaveBeenCalled();
+        return $fromPaper;
     }
 }
