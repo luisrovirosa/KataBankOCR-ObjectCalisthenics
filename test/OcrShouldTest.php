@@ -32,17 +32,4 @@ class OcrShouldTest extends BaseTest
         $numberBuilderProphecy->build($this->validInput())->shouldHaveBeenCalled();
     }
 
-    /**
-     * @return string
-     */
-    private function validInput()
-    {
-        $fromPaper =
-            "   _  _     _  _  _  _  _ " .
-            " | _| _||_||_ |_ | ||_||_|" .
-            " ||_  _|  | _||_|  ||_| _|" .
-            "                          ";
-
-        return $fromPaper;
-    }
 }

@@ -10,5 +10,11 @@ class NumberBuilder
      */
     public function build($fromPaper)
     {
+        $result = [];
+        for ($i = 0; $i < 9; $i++) {
+            $result[] = null;
+        }
+
+        return $result;
     }
 }
