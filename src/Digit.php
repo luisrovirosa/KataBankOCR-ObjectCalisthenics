@@ -17,6 +17,6 @@ class Digit
 
     public function value()
     {
-
+        return 1;
     }
 }
