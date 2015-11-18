@@ -4,7 +4,7 @@ namespace KataBank\Test;
 
 use KataBank\NumberBuilder;
 
-class NameBuilderShouldTest extends BaseTest
+class NumberBuilderShouldTest extends BaseTest
 {
     /** @test */
     public function return_number()
