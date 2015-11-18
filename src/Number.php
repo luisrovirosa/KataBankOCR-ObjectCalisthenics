@@ -47,4 +47,5 @@ class Number
 
         return $result;
     }
+
 }

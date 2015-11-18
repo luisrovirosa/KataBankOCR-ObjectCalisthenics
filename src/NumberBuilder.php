@@ -20,7 +20,7 @@ class NumberBuilder
 
     /**
      * @param $fromPaper
-     * @return Number
+     * @return \KataBank\Number
      */
     public function build($fromPaper)
     {

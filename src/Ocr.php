@@ -8,14 +8,20 @@ class Ocr
      * @var NumberBuilder
      */
     private $builder;
+    /**
+     * @var NumberValidator
+     */
+    private $validator;
 
     /**
      * Ocr constructor.
      * @param NumberBuilder $builder
+     * @param NumberValidator $validator
      */
-    public function __construct(NumberBuilder $builder)
+    public function __construct(NumberBuilder $builder, NumberValidator $validator)
     {
         $this->builder = $builder;
+        $this->validator = $validator;
     }
 
     /**
@@ -24,6 +30,9 @@ class Ocr
      */
     public function read($fromPaper)
     {
-        return $this->builder->build($fromPaper);
+        $number = $this->builder->build($fromPaper);
+        $this->validator->validate($number);
+
+        return $number;
     }
 }
