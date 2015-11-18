@@ -14,4 +14,9 @@ class Digit
     {
         $this->value = $fromString;
     }
+
+    public function value()
+    {
+
+    }
 }
