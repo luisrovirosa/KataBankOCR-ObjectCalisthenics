@@ -2,6 +2,8 @@
 
 namespace KataBank\Test;
 
+use KataBank\Number;
+
 abstract class BaseTest extends \PHPUnit_Framework_TestCase
 {
 
@@ -11,11 +13,19 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
     protected function validInput()
     {
         $fromPaper =
-            "   _  _     _  _  _  _  _ " .
-            " | _| _||_||_ |_ | ||_||_|" .
-            " ||_  _|  | _||_|  ||_| _|" .
+            "    _  _     _  _  _  _  _ \n" .
+            "  | _| _||_||_ |_ | ||_||_|\n" .
+            "  ||_  _|  | _||_|  ||_| _|\n" .
             "                          ";
 
         return $fromPaper;
+    }
+
+    /**
+     * @return Number
+     */
+    protected function one()
+    {
+        return new Number("     |  |   ");
     }
 }

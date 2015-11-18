@@ -23,6 +23,15 @@ class NameBuilderShouldTest extends BaseTest
             $this->assertInstanceOf('KataBank\Number', $number);
         }
     }
+
+    /** @test */
+    public function return_the_first_number_as_one()
+    {
+        $numbers = $this->numbers();
+
+        $this->assertEquals($this->one(), array_pop($numbers));
+    }
+
     /**
      * @return array
      */
@@ -33,4 +42,5 @@ class NameBuilderShouldTest extends BaseTest
 
         return $numbers;
     }
+
 }
