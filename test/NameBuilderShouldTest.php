@@ -7,43 +7,43 @@ use KataBank\NumberBuilder;
 class NameBuilderShouldTest extends BaseTest
 {
     /** @test */
-    public function return_9_values()
+    public function return_number()
     {
-        $numbers = $this->numbers();
+        $number = $this->number();
 
-        $this->assertCount(9, $numbers);
+        $this->assertInstanceOf('KataBank\Number', $number);
     }
 
     /** @test */
-    public function return_numbers()
+    public function return_9_digits()
     {
-        $numbers = $this->numbers();
+        $number = $this->number();
 
-        foreach ($numbers as $number) {
-            $this->assertInstanceOf('KataBank\Number', $number);
-        }
+        $this->assertCount(9, $number->digits());
     }
 
     /** @test */
     public function return_the_first_number_as_one()
     {
-        $numbers = $this->numbers();
+        $number = $this->number();
 
-        $this->assertEquals($this->one(), $numbers[0]);
+        $digits = $number->digits();
+        $this->assertEquals($this->one(), $digits[0]);
     }
 
     /** @test */
     public function return_the_second_number_as_two()
     {
-        $numbers = $this->numbers();
+        $number = $this->number();
+        $digits = $number->digits();
 
-        $this->assertEquals($this->two(), $numbers[1]);
+        $this->assertEquals($this->two(), $digits[1]);
     }
 
     /**
-     * @return array
+     * @return \KataBank\Number
      */
-    private function numbers()
+    private function number()
     {
         $builder = new NumberBuilder();
         $numbers = $builder->build($this->validInput());

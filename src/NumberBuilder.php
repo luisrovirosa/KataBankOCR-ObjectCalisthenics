@@ -6,17 +6,17 @@ class NumberBuilder
 {
     /**
      * @param $fromPaper
-     * @return array
+     * @return Number
      */
     public function build($fromPaper)
     {
-        $result = [];
+        $digits = [];
         for ($i = 0; $i < 9; $i++) {
-            $text = $this->numberText($fromPaper, $i);
-            $result[] = new Number($text);
+            $digits[] = $this->digit($fromPaper, $i);
         }
 
-        return $result;
+
+        return new Number($digits);
     }
 
     /**
@@ -24,7 +24,7 @@ class NumberBuilder
      * @param $position
      * @return string
      */
-    private function numberText($fromPaper, $position)
+    private function digitText($fromPaper, $position)
     {
         $number = '';
         $lines = explode("\n", $fromPaper);
@@ -33,5 +33,18 @@ class NumberBuilder
         }
 
         return $number;
+    }
+
+    /**
+     * @param $fromPaper
+     * @param $i
+     * @return Number
+     */
+    private function digit($fromPaper, $i)
+    {
+        $text = $this->digitText($fromPaper, $i);
+        $digit = new Digit($text);
+
+        return $digit;
     }
 }

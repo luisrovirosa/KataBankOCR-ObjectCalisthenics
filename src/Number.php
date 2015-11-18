@@ -4,14 +4,22 @@ namespace KataBank;
 
 class Number
 {
-    private $value;
+    /**
+     * @var Digit[]
+     */
+    private $digits;
 
     /**
      * Number constructor.
-     * @param $fromString
+     * @param Digit[] $digits
      */
-    public function __construct($fromString)
+    public function __construct($digits)
     {
-        $this->value = $fromString;
+        $this->digits = $digits;
+    }
+
+    public function digits()
+    {
+        return $this->digits;
     }
 }
