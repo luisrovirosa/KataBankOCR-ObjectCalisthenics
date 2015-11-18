@@ -17,4 +17,9 @@ class DigitShouldTest extends BaseTest
         $this->assertEquals(2, $this->two()->value());
     }
 
+    /** @test */
+    public function return_value_3()
+    {
+        $this->assertEquals(3, $this->three()->value());
+    }
 }

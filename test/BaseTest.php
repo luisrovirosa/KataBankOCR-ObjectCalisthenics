@@ -46,4 +46,17 @@ abstract class BaseTest extends \PHPUnit_Framework_TestCase
             "   "
         );
     }
+
+    /**
+     * @return Digit
+     */
+    protected function three()
+    {
+        return new Digit(
+            " _ " .
+            " _|" .
+            " _|" .
+            "   "
+        );
+    }
 }
