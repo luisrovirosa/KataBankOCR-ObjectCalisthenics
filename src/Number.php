@@ -52,12 +52,12 @@ class Number
 
     private function calculateValue()
     {
-        $result = 0;
-        foreach ($this->digits as $digit) {
-            $result = $result * 10 + $digit->value();
-        }
-
-        return $result;
+        return array_reduce(
+            $this->digits,
+            function ($carry, Digit $digit) {
+                return $carry * 10 + $digit->value();
+            }
+        );
     }
 
     private function calculateString()
