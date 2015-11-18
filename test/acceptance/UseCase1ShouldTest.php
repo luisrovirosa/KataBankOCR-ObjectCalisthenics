@@ -37,10 +37,16 @@ class UseCase1ShouldTest extends BaseTest
             "  |  |  |  |  |  |  |  |  |\n" .
             "  |  |  |  |  |  |  |  |  |\n" .
             "                           \n";
+        $allTwo =
+            " _  _  _  _  _  _  _  _  _ \n" .
+            " _| _| _| _| _| _| _| _| _|\n" .
+            "|_ |_ |_ |_ |_ |_ |_ |_ |_ \n" .
+            "                           \n";
 
         return [
             ["000000000", $allZeros],
             ["111111111", $allOnes],
+            ["222222222", $allTwo],
         ];
     }
 
