@@ -30,16 +30,6 @@ class OcrShouldTest extends BaseTest
     }
 
     /** @test */
-    public function recognise_123456789_correctly_written()
-    {
-        $ocr = $this->realOcr();
-
-        $number = $ocr->read($this->validInput());
-
-        $this->assertEquals(123456789, $number->value());
-    }
-
-    /** @test */
     public function use_number_builder()
     {
         $ocr = $this->ocr();
