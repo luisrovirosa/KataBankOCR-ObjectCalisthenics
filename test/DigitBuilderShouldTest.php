@@ -4,6 +4,8 @@ namespace KataBank\Test;
 
 use KataBank\Digit;
 use KataBank\DigitBuilder;
+use KataBank\TextDigits;
+use phpDocumentor\Reflection\DocBlock\Tag;
 
 class DigitBuilderShouldTest extends BaseTest
 {
@@ -13,7 +15,8 @@ class DigitBuilderShouldTest extends BaseTest
     protected function setUp()
     {
         parent::setUp();
-        $this->digitBuilder = new DigitBuilder();
+        $textDigit = new TextDigits();
+        $this->digitBuilder = new DigitBuilder($textDigit);
     }
 
     /**

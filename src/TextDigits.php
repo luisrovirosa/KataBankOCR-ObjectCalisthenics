@@ -7,7 +7,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function zero()
+    public function zero()
     {
         return
             " _ " .
@@ -19,7 +19,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function one()
+    public function one()
     {
         return
             "   " .
@@ -31,7 +31,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function two()
+    public function two()
     {
         return
             " _ " .
@@ -43,7 +43,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function three()
+    public function three()
     {
         return
             " _ " .
@@ -55,7 +55,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function four()
+    public function four()
     {
         return
             "   " .
@@ -67,7 +67,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function five()
+    public function five()
     {
         return
             " _ " .
@@ -79,7 +79,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function six()
+    public function six()
     {
         return
             " _ " .
@@ -91,7 +91,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function seven()
+    public function seven()
     {
         return
             " _ " .
@@ -103,7 +103,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function eight()
+    public function eight()
     {
         return
             " _ " .
@@ -115,7 +115,7 @@ class TextDigits
     /**
      * @return string
      */
-    public static function nine()
+    public function nine()
     {
         return
             " _ " .

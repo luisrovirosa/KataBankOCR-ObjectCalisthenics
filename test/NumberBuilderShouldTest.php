@@ -5,6 +5,7 @@ namespace KataBank\Test;
 use KataBank\Digit;
 use KataBank\DigitBuilder;
 use KataBank\NumberBuilder;
+use KataBank\TextDigits;
 
 class NumberBuilderShouldTest extends BaseTest
 {
@@ -65,7 +66,7 @@ class NumberBuilderShouldTest extends BaseTest
      */
     private function number()
     {
-        $digitBuilder = new DigitBuilder();
+        $digitBuilder = new DigitBuilder(new TextDigits());
         $numberBuilder = new NumberBuilder($digitBuilder);
         $numbers = $numberBuilder->build($this->validInput());
 

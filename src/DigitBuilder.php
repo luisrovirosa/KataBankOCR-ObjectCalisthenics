@@ -4,38 +4,53 @@ namespace KataBank;
 
 class DigitBuilder
 {
+    /** @var  TextDigits */
+    private $textDigits;
+
+    /** @var  string[] */
+    private $allDigits;
+
+    /**
+     * DigitBuilder constructor.
+     * @param TextDigits $textDigits
+     */
+    public function __construct(TextDigits $textDigits)
+    {
+        $this->textDigits = $textDigits;
+        $this->allDigits = $this->numbers();
+    }
 
     public function build($digitString)
     {
-        $matched = static::matchedNumbers($digitString, static::numbers());
-
+        $matched = $this->matchedNumbers($digitString, $this->allDigits);
         $indexes = array_keys($matched);
 
         return new Digit(array_shift($indexes));
     }
 
-    private static function numbers()
+    private function numbers()
     {
 
         return [
-            TextDigits::zero(),
-            TextDigits::one(),
-            TextDigits::two(),
-            TextDigits::three(),
-            TextDigits::four(),
-            TextDigits::five(),
-            TextDigits::six(),
-            TextDigits::seven(),
-            TextDigits::eight(),
-            TextDigits::nine()
+            $this->textDigits->zero(),
+            $this->textDigits->one(),
+            $this->textDigits->two(),
+            $this->textDigits->three(),
+            $this->textDigits->four(),
+            $this->textDigits->five(),
+            $this->textDigits->six(),
+            $this->textDigits->seven(),
+            $this->textDigits->eight(),
+            $this->textDigits->nine()
         ];
     }
 
     /**
+     * @param $fromString
      * @param $numbers
      * @return array
      */
-    private static function matchedNumbers($fromString, $numbers)
+    private function matchedNumbers($fromString, $numbers)
     {
         return array_filter(
             $numbers,
