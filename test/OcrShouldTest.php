@@ -2,6 +2,7 @@
 
 namespace KataBank\Test;
 
+use KataBank\DigitBuilder;
 use KataBank\NumberBuilder;
 use KataBank\Ocr;
 
@@ -10,7 +11,9 @@ class OcrShouldTest extends BaseTest
     /** @test */
     public function recognise_123456789_correctly_written()
     {
-        $ocr = new Ocr(new NumberBuilder());
+        $digitBuilder = new DigitBuilder();
+        $numberBuilder = new NumberBuilder($digitBuilder);
+        $ocr = new Ocr($numberBuilder);
 
         $number = $ocr->read($this->validInput());
 

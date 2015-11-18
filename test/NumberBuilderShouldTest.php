@@ -3,6 +3,7 @@
 namespace KataBank\Test;
 
 use KataBank\Digit;
+use KataBank\DigitBuilder;
 use KataBank\NumberBuilder;
 
 class NumberBuilderShouldTest extends BaseTest
@@ -13,6 +14,24 @@ class NumberBuilderShouldTest extends BaseTest
         $number = $this->number();
 
         $this->assertInstanceOf('KataBank\Number', $number);
+    }
+
+    /** @test */
+    public function use_digit_builder()
+    {
+        $digitBuilderProphecy = $this->prophesize('KataBank\DigitBuilder');
+        /** @var DigitBuilder $digitBuilder */
+        $digitBuilder = $digitBuilderProphecy->reveal();
+        $numberBuilder = new NumberBuilder($digitBuilder);
+
+        $one =
+            "   \n" .
+            "  |\n" .
+            "  |\n" .
+            "   \n";
+        $numberBuilder->build($one);
+
+        $digitBuilderProphecy->build($this->one())->shouldHaveBeenCalled();
     }
 
     /** @test */
@@ -46,8 +65,9 @@ class NumberBuilderShouldTest extends BaseTest
      */
     private function number()
     {
-        $builder = new NumberBuilder();
-        $numbers = $builder->build($this->validInput());
+        $digitBuilder = new DigitBuilder();
+        $numberBuilder = new NumberBuilder($digitBuilder);
+        $numbers = $numberBuilder->build($this->validInput());
 
         return $numbers;
     }
