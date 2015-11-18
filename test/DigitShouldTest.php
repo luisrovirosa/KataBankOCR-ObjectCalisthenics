@@ -22,4 +22,10 @@ class DigitShouldTest extends BaseTest
     {
         $this->assertEquals(3, $this->three()->value());
     }
+
+    /** @test */
+    public function return_value_4()
+    {
+        $this->assertEquals(4, $this->four()->value());
+    }
 }
